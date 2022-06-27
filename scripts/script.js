@@ -116,7 +116,6 @@ function renderAside() {
 
 function loadAside() {
   const cls = recipient === "Todos" ? "selected" : "";
-  console.log(cls);
   people.innerHTML = `
     <li class="${cls}">
       <div onclick="selectRecipient(this)">
@@ -129,7 +128,6 @@ function loadAside() {
 
   participants.forEach(participant => {
     const cls = participant.name === recipient ? "selected" : "";
-    console.log(participant.name, recipient);
     people.innerHTML += `
       <li class="${cls}">
         <div onclick="selectRecipient(this)">
