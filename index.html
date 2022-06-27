@@ -22,51 +22,58 @@
     <link rel="stylesheet" href="styles/style.css" />
   </head>
   <body>
+    <div class="login">
+      <img src="images/uol.png" alt="logo bate-papo uol" />
+      <div class="login-container">
+        <p class="error">Usuário inválido!</p>
+        <input type="text" placeholder="Digite seu nome" />
+        <button onclick="login()">Entrar</button>
+      </div>
+
+      <div class="loader hidden">
+        <img src="images/loading.gif" alt="spinner loading" />
+        <p class="loading">Entrando...</p>
+      </div>
+    </div>
     <header>
       <img src="images/uol.png" alt="logo bate-papo uol" />
-      <ion-icon name="people"></ion-icon>
+      <ion-icon name="people" onclick="renderAside()"></ion-icon>
     </header>
-    <main>
-      <div class="msg status-msg">
-        <p>
-          <small class="time">(09:21:45)</small> <strong class="from">João</strong> entra na sala...
-        </p>
-      </div>
+    <main></main>
+    <aside class="hidden">
+      <div class="off" onclick="toggleAside()"></div>
+      <div class="message-settings">
+        <div>
+          <h2>Escolha um contato<br />para enviar mensagem</h2>
+          <ul class="people"></ul>
 
-      <div class="msg default-msg">
-        <p>
-          <small class="time">(09:22:28)</small> <strong class="from">João</strong> para
-          <strong class="to">Todos</strong>: Bom dia
-        </p>
-      </div>
+          <h2>Escolha a visibilidade:</h2>
+          <ul class="viz">
+            <li class="selected">
+              <div onclick="selectVisibility(this)">
+                <ion-icon name="lock-open"></ion-icon>
+                <p>Público</p>
+              </div>
+              <img src="images/check.svg" alt="checkmark" />
+            </li>
 
-      <div class="msg default-msg">
-        <p>
-          <small class="time">(09:22:38)</small> <strong class="from">Maria</strong> para
-          <strong class="to">João</strong>: Oi João :)
-        </p>
+            <li>
+              <div onclick="selectVisibility(this)">
+                <ion-icon name="lock-closed"></ion-icon>
+                <p>Reservadamente</p>
+              </div>
+              <img src="images/check.svg" alt="checkmark" />
+            </li>
+          </ul>
+        </div>
       </div>
-
-      <div class="msg private-msg">
-        <p>
-          <small class="time">(09:22:48)</small> <strong class="from">João</strong> reservadamente
-          para <strong class="to">Maria</strong>: Oi gatinha quer tc?
-        </p>
-      </div>
-
-      <div class="msg status-msg">
-        <p>
-          <small class="time">(09:22:58)</small> <strong class="from">Maria</strong> sai da sala...
-        </p>
-      </div>
-    </main>
-    <aside></aside>
+    </aside>
     <footer>
       <div>
         <input type="text" placeholder="Escreva aqui..." />
-        <p class="send-info">Enviando para Maria (reservadamente)</p>
+        <p class="send-info">Enviando para Todos</p>
       </div>
-      <ion-icon name="paper-plane-outline"></ion-icon>
+      <ion-icon name="paper-plane-outline" onclick="sendMessage()"></ion-icon>
     </footer>
     <!-- scripts -->
     <script

@@ -3,6 +3,85 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+.login {
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+
+  display: flex;
+  flex-direction: column;
+  gap: 94px;
+  align-items: center;
+
+  padding-top: 72px;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+}
+
+.login-container,
+.loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 15px;
+}
+
+.error {
+  display: none;
+}
+
+.error-login .error {
+  display: initial;
+  font-size: 14px;
+  color: #f00;
+}
+
+.login input {
+  color: #aeaeae;
+  font-size: 18px;
+  line-height: 54px;
+
+  border: 1px solid #d7d7d7;
+  border-radius: 4px;
+}
+
+.error-login input {
+  color: #f00;
+  border: 1px solid #f00;
+  background-color: #ffdede;
+}
+
+button {
+  width: 109px;
+  height: 45px;
+
+  color: #696969;
+  font-size: 18px;
+  line-height: 25px;
+
+  background: #e7e7e7;
+  border-radius: 9px;
+}
+
+button:hover {
+  cursor: pointer;
+  color: #fff;
+  background-color: #eab93a;
+}
+
+.loader img {
+  width: 150px;
+}
+
+.loading {
+  font-size: 24px;
+  font-weight: 700;
+  color: #eab93a;
+}
+
 header {
   height: 80px;
   width: 100vw;
@@ -44,7 +123,7 @@ main {
 .msg {
   font-size: 14px;
   line-height: 18px;
-
+  word-break: break-all;
   padding: 12px 8px;
   border-radius: 2px;
 }
@@ -67,7 +146,78 @@ main {
 
 .from,
 .to {
+  max-width: 90%;
   font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+aside {
+  width: 100vw;
+  height: 100vh;
+  font-size: 16px;
+  line-height: 19px;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  z-index: 1;
+}
+
+.off {
+  width: 30vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+
+  cursor: pointer;
+}
+
+.message-settings {
+  width: 70vw;
+  height: 100vh;
+  background-color: #fff;
+  top: 0;
+  right: 0;
+  position: fixed;
+  overflow-y: scroll;
+  z-index: 1;
+}
+
+h2 {
+  font-weight: 700;
+  text-align: center;
+  margin: 20px 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 27px 0 18px;
+  margin: 8px 0;
+}
+
+li:hover {
+  cursor: pointer;
+  color: #eab93a;
+}
+
+li div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+li ion-icon {
+  font-size: 24px;
+}
+
+li img {
+  display: none;
+}
+
+li.selected img {
+  display: initial;
 }
 
 footer {
@@ -116,4 +266,8 @@ footer input::placeholder {
 
 footer ion-icon {
   font-size: 26px;
+}
+
+.hidden {
+  display: none;
 }
