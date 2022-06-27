@@ -11,12 +11,63 @@
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
 
     <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,400&display=swap"
+      rel="stylesheet" />
 
     <!-- stylesheets -->
     <link rel="stylesheet" href="styles/reset.css" />
     <link rel="stylesheet" href="styles/style.css" />
   </head>
   <body>
+    <header>
+      <img src="images/uol.png" alt="logo bate-papo uol" />
+      <ion-icon class="huge-icon" name="people"></ion-icon>
+    </header>
+    <main>
+      <div class="msg status-msg">
+        <p>
+          <small class="time">(09:21:45)</small> <strong class="from">João</strong> entra na sala...
+        </p>
+      </div>
+
+      <div class="msg default-msg">
+        <p>
+          <small class="time">(09:22:28)</small> <strong class="from">João</strong> para
+          <strong class="to">Todos</strong>: Bom dia
+        </p>
+      </div>
+
+      <div class="msg default-msg">
+        <p>
+          <small class="time">(09:22:38)</small> <strong class="from">Maria</strong> para
+          <strong class="to">João</strong>: Oi João :)
+        </p>
+      </div>
+
+      <div class="msg private-msg">
+        <p>
+          <small class="time">(09:22:48)</small> <strong class="from">João</strong> reservadamente
+          para <strong class="to">Maria</strong>: Oi gatinha quer tc?
+        </p>
+      </div>
+
+      <div class="msg status-msg">
+        <p>
+          <small class="time">(09:22:58)</small> <strong class="from">Maria</strong> sai da sala...
+        </p>
+      </div>
+    </main>
+    <aside></aside>
+    <footer>
+      <div>
+        <input type="text" placeholder="Escreva aqui..." />
+        <p class="send-info">Enviando para Maria (reservadamente)</p>
+      </div>
+      <ion-icon class="big-icon" name="paper-plane-outline"></ion-icon>
+    </footer>
     <!-- scripts -->
     <script
       type="module"
